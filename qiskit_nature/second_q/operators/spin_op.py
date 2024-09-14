@@ -620,6 +620,6 @@ class SpinOp(SparseLabelOp):
                 matrix_per_idx.get(i, i_mat) for i in range(self.register_length)
             ]
             # add weighted kronecker product to final matrix
-            final_matrix += coeff * tensorall(np.asarray(dense_matrix_per_idx))
+            final_matrix = final_matrix + coeff * tensorall(np.asarray(dense_matrix_per_idx))
 
         return final_matrix
